@@ -1,0 +1,13 @@
+:root {
+    --color-primary: hsl(75, 50%, 90%);
+    --color-secondary: hsl(75, 50%, 10%);
+    --color-tertiary: hsl(135, 80%, 20%);
+    --color-accent: hsl(15, 80%, 20%);
+}
+
+.dark {
+    --color-primary: hsl(75, 50%, 10%);
+    --color-secondary: hsl(75, 50%, 90%);
+    --color-tertiary: hsl(135, 80%, 80%);
+    --color-accent: hsl(15, 80%, 80%);
+}
