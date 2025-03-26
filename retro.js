@@ -1,20 +1,20 @@
 var theme_t = "lime";
 var theme_l = "light";
 var retro=true;
-var quickstart=true;
+var online=true;
 
 
 
 (()=>{
-    if(quickstart){
-        quickstart = "https://github.com/9JH1/retro.js/blob/main/"
+    if(online){
+        online = "https://9jh1.github.io/retro.js"
     }
 })();
 (() => { // import theme
     if(theme_t !=false){
         const theme = document.createElement("link");
         theme.rel = "stylesheet";
-        theme.href = `/src/css/themes/${theme_t}.css`;
+        theme.href = `${online}/src/css/themes/${theme_t}.css`;
         theme.id = "retro-theme";
         document.head.append(theme)
     }
@@ -23,7 +23,7 @@ var quickstart=true;
     if(retro){
         const retroCss = document.createElement("link");
         retroCss.rel = "stylesheet";
-        retroCss.href = "src/css/retro.css";
+        retroCss.href = `${online}/src/css/retro.css`;
         retroCss.id="retro-css";
         document.head.append(retroCss)
     }
