@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="retro.js"></script>
+    <style>
+        body {
+            background: var(--color-primary);
+            color: var(--color-secondary);
+        }
+    </style>
 </head>
 
 <body>
@@ -16,6 +22,7 @@
     <h2>Hello World H2</h2>
     <h1>Hello World H1</h1>
     <p>Paragraph with <strong>Strong</strong> and <em>Em</em> text</p>
+    <p>here is some <mark class="font-daydream font-daydream-size-fix">highlighted text</mark> too.</p>
     <button>Button</button>
     <input type="text" placeholder="Input">
     <ol>
@@ -68,19 +75,6 @@
             <u>H</u>elp
         </span>
     </div>
-    <br>
-    <br>
-    <div class="outline width-fit-content gap-5" style="background:rgb(230, 230, 230);">
-        <label for="username">Username</label>
-        <input type="text" name="username" id="" placeholder="">
-        <br>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="" placeholder="">
-        <br>
-        <center>
-            <button>Submit</button>
-        </center>
-    </div>
     <div class="dropdown">
         <button class="dropbtn">Dropdown</button>
         <div class="dropdown-content">
@@ -89,7 +83,21 @@
             <a href="#">Link 3</a>
         </div>
     </div>
-
+    <br>
+    <br>
+    <div class="outline width-fit-content gap-5" style="background:rgb(230, 230, 230);">
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="">
+        <br>
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="">
+        <br>
+        <center>
+            <button class="font-daydream">Submit</button>
+        </center>
+    </div>
+    <br>
+    <br>
 </body>
 
 </html>

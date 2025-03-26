@@ -1,4 +1,5 @@
 const theme_t = "lime";
+const theme_l = "light";
 
 (() => { // import theme
     const theme = document.createElement("link");
@@ -12,6 +13,13 @@ const theme_t = "lime";
     retroCss.href = "src/css/retro.css";
     document.head.append(retroCss)
 })();
+(() => { // set theme dark/light
+    if (theme_l == "dark") {
+        window.onload = function () {
+            document.body.classList.toggle('dark');
+        }
+    }
+})()
 
 function getTotalPageSize() {
     let totalSize = 0;

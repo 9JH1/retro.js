@@ -14,16 +14,13 @@
 
 button,
 input {
-    border: inset;
+    border: inset var(--color-secondary);
+    background: var(--color-secondary);
+    color: var(--color-primary);
     -webkit-box-shadow: 0px 3px 19px -7px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 3px 19px -7px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 3px 19px -7px rgba(0, 0, 0, 0.75);
 }
-
-button:hover {
-    background: grey;
-}
-
 
 strong {
     font-family: 'daydream';
@@ -49,15 +46,15 @@ h1 {
     display: inline-block;
     width: 15px;
     height: 15px;
-    border: 3px inset black;
+    border: 3px inset var(--color-secondary);
     border-radius: 4px;
     position: relative;
     cursor: pointer;
 }
 
 .custom-checkbox input:checked+span {
-    background: black;
-    border: solid black;
+    background: var(--color-accent);
+    border: inset var(--color-accent);
 }
 
 .radio-container {
@@ -79,8 +76,8 @@ h1 {
 .radio-custom {
     width: 15px;
     height: 15px;
-    border: 3px inset #000000;
-    background: white;
+    border: 3px inset var(--color-secondary);
+    background: var(--color-primary);
     position: relative;
     margin-right: 10px;
     border-radius: 20%;
@@ -90,16 +87,20 @@ h1 {
     content: '';
     width: 15px;
     height: 15px;
-    background: black;
+    background: var(--color-accent);
     position: absolute;
     top: 0%;
     left: 0%;
 }
 
+.radio-label input:checked+.radio-custom {
+    border: 3px inset var(--color-accent);
+}
+
 .outline {
     margin-top: 10px;
     padding: 3px;
-    border: solid 1px black;
+    border: solid 1px var(--color-secondary);
 }
 
 .gap-5 {
@@ -119,8 +120,8 @@ h1 {
 
 
 .dropbtn {
-    background-color: black;
-    color: white;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
     border: none;
 }
 
@@ -132,21 +133,21 @@ h1 {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: grey;
+    background-color: var(--color-secondary);
     min-width: fit-content;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
 .dropdown-content a {
-    color: black;
+    color: var(--color-primary);
     text-decoration: none;
     display: block;
 }
 
 .dropdown-content a:hover {
-    background-color: black;
-    color: white;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
     font-family: 'daydream';
     font-size: 0.7em;
 }
@@ -156,7 +157,7 @@ h1 {
 }
 
 .dropdown:hover .dropbtn {
-    background-color: black;
+    background-color: var(--color-secondary);
 }
 
 .font-windows {
@@ -165,4 +166,19 @@ h1 {
 
 .font-daydream {
     font-family: 'daydream';
+}
+
+.font-daydream-size-fix {
+    font-size: 0.6em;
+}
+
+mark {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    padding: 4px;
+}
+
+.dark {
+    background: var(--color-primary);
+    color: var(--color-secondary);
 }

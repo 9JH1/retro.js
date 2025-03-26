@@ -1,0 +1,13 @@
+:root {
+    --color-primary: white;
+    --color-secondary: black;
+    --color-tertiary: grey;
+    --color-accent: black;
+}
+
+.dark {
+    --color-primary: black;
+    --color-secondary: white;
+    --color-tertiary: white;
+    --color-accent: white;
+}
