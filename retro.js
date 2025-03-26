@@ -7,7 +7,7 @@ var quickstart=true;
 
 (()=>{
     if(quickstart){
-        quickstart = "https://raw.github.com/"
+        quickstart = "https://github.com/9JH1/retro.js/blob/main/"
     }
 })();
 (() => { // import theme
