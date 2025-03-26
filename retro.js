@@ -1,13 +1,15 @@
-var theme_t = "lime";
+var theme_t = "monochrome";
 var theme_l = "light";
 var retro=true;
-var online=true;
+var online=false;
 
 
 
 (()=>{
     if(online){
         online = "https://9jh1.github.io/retro.js"
+    } else {
+        online = ""
     }
 })();
 (() => { // import theme

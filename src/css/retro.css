@@ -127,8 +127,6 @@ h1 {
 
 .dropdown { 
     width:fit-content;
-    background:var(--color-accent);
-    color:var(--color-primary);
     position:relative;
     * { 
         width:100%;
@@ -140,13 +138,16 @@ h1 {
         z-index:1;
         a { 
             display:block;
-            background:var(--color-secondary);
-            color:var(--color-primary);
+            background:var(--color-primary);
+            text-decoration: none;
+            color:var(--color-secondary);
         }
         a:hover { 
             background:var(--color-accent);
             color:var(--color-primary);
             font-family: 'daydream';
+            font-size:0.7em;
+            padding:3px;
         }
     }
 }

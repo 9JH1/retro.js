@@ -12,3 +12,11 @@ git clone https://github.com/9jh1/retro.js/
 git cd retro.js
 mv * ../
 ```
+After installing locally you can edit the settings at the top of retro.js
+```js
+var theme_t = "lime";
+var theme_l = "light";
+var retro=true;
+var online=true;
+```
+First things first, remove the `online` var or change its value to false, this changes the source from online to local.<br>the `theme_l` var can be either `light` or `dark`, theme files can be found inside `/src/css/themes` there are three built in ones `monochrome`, `blue` and `lime`.
