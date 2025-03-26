@@ -1,7 +1,26 @@
-var theme_t = "monochrome";
+// set a theme from the
+// src/css/themes directory
+// if set to online then only 3
+// themese will be available:
+// lime, blue and monochrome.
+var theme_t = "lime";
+
+// light or dark straightforward
 var theme_l = "light";
-var retro=true;
-var online=false;
+
+// setting this to true will make 
+// enable the retro.css injection
+// without it the colors and the 
+// custom styles will not load, 
+// this effectivly disables this
+// script.
+var retro=/*enable theming*/true;
+
+// setting true means that the code will
+// get fetch the styles and themes from 
+// the online repo, this will not work
+// offline.
+var online= /*set the source*/true;
 
 
 
