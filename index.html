@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro.js</title>
+    <script src="retro.js" defer></script>
+    <style>
+        body { 
+            padding:0px;
+            margin:0px;
+            font-size:3em;
+        }
+        .nav { 
+            background:var(--color-secondary);
+            color:var(--color-primary);
+            width:100%;
+            display:flex;
+            u { 
+                margin-left:10px;
+            }
+        }
+        .border-right { 
+            border-right:dashed var(--color-accent) 5px;
+        }
+        td { 
+            padding:50px;
+        }
+        a { 
+            color:var(--color-primary) !important;
+        }
+    </style>
+</head>
+<body id="retro">
+    <div class="nav">
+        <span class="retro-capitalize">Edit File View Help</span>
+        <div class="dropdown">
+            <div class="text retro-capitalize">Theme</div>
+            <div class="options">
+                <a onclick="theme_t = 'monochrome';theme_l='light';retro_reload()">Monochrome</a>
+                <a onclick="theme_t = 'lime';theme_l='light';retro_reload()">Lime</a>
+                <a onclick="theme_t = 'blue';theme_l='light';retro_reload()">Blue</a>
+
+                <a onclick="theme_t = 'monochrome';theme_l='dark';retro_reload()">Monochrome-Dark</a>
+                <a onclick="theme_t = 'lime';theme_l='dark';retro_reload()">Lime-Dark</a>
+                <a onclick="theme_t = 'blue';theme_l='dark';retro_reload()">Blue-Dark</a>
+            </div>
+        </div>
+        <button style="margin-left:20px;"><a href="https://github.com/9jh1/retro.js" class="retro-capitalize">Source Code</a></button>
+    </div>
+    <center>
+        <h2>Hello World!</h2>
+        <h1>RETRO.JS </h1>
+        
+        <div class="horizontal-line"></div>
+        <table>
+        <tr>
+            <td class="border-right">
+                <p><span class="font-daydream font-daydream-size-fix">RETRO.JS</span> is a <mark>small and lightweight</mark> themeing system written in <mark>javascript</mark>, <span class="font-daydream font-daydream-size-fix">RETRO.JS</span> provides a <mark>simple and easy</mark> to use themeing system that allows for <mark>quick styles</mark> and colors on the web.</p>
+            </td>
+            <td>
+                <p>Try it out!, on the navbar hover on the theme dropdown and select a theme.</p>
+            </td>
+       </table>
+    </center>
+</body>
+</html>

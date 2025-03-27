@@ -3,7 +3,7 @@
 // if set to online then only 3
 // themese will be available:
 // lime, blue and monochrome.
-var theme_t = "lime";
+var theme_t = "blue";
 
 // light or dark straightforward
 var theme_l = "light";
@@ -14,79 +14,70 @@ var theme_l = "light";
 // custom styles will not load, 
 // this effectivly disables this
 // script.
-var retro=/*enable theming*/true;
+var retro =/*enable theming*/true;
 
 // setting true means that the code will
 // get fetch the styles and themes from 
 // the online repo, this will not work
 // offline.
-var online= /*set the source*/true;
+var online = /*set the source*/false;
 
-
-
-(()=>{
-    if(online){
-        online = "https://9jh1.github.io/retro.js"
-    } else {
-        online = ""
-    }
-})();
-(() => { // import theme
-    if(theme_t !=false){
-        const theme = document.createElement("link");
-        theme.rel = "stylesheet";
-        theme.href = `${online}/src/css/themes/${theme_t}.css`;
-        theme.id = "retro-theme";
-        document.head.append(theme)
-    }
-})();
-(() => { // import css
-    if(retro){
-        const retroCss = document.createElement("link");
-        retroCss.rel = "stylesheet";
-        retroCss.href = `${online}/src/css/retro.css`;
-        retroCss.id="retro-css";
-        document.head.append(retroCss)
-    }
-})();
-(() => { // set theme dark/light
-    if (theme_l == "dark") {
-        window.onload = function () {
-            document.body.classList.toggle('dark');
-        }
-    }
-})();
-
-function getTotalPageSize() {
-    let totalSize = 0;
-
-    // Get all loaded resources
-    performance.getEntriesByType("resource").forEach(resource => {
-        if (resource.transferSize) {
-            totalSize += resource.transferSize; // Transfer size in bytes
-        }
-    });
-
-    return (totalSize / 1024).toFixed(2);
+function retro_reload() {
+    document.getElementById("retro-preload").remove()
+    document.getElementById("retro-css").remove()
+    document.getElementById("retro-theme").remove()
+    retro_load()
 }
-const size = getTotalPageSize();
+function retro_load() {
+    (() => { // handle online resources
+        if (online) online = "https://9jh1.github.io/retro.js";
+        else online = "";
+    })();
+    (() => { // preload stylesheet ( base custom styles )
+        const retroPreload = document.createElement("link");
+        retroPreload.rel = "stylesheet";
+        retroPreload.href = `${online}/src/css/preload.css`;
+        retroPreload.id = "retro-preload";
+        document.head.append(retroPreload)
+    })();
 
-
-function resizeText() {
-    document.querySelectorAll(".dropdown a").forEach(text => {
-      const container = text.parentElement; // The .dropdown container
-      let fontSize = 100; // Start large
-      text.style.fontSize = `${fontSize}px`;
-  
-      // Decrease font size until it fits inside the container
-      while (text.scrollWidth > container.clientWidth || text.scrollHeight > container.clientHeight) {
-        fontSize--;
-        text.style.fontSize = `${fontSize}px`;
-      }
+    (() => { // import theme
+        if (theme_t != false) {
+            const theme = document.createElement("link");
+            theme.rel = "stylesheet";
+            theme.href = `${online}/src/css/themes/${theme_t}.css`;
+            theme.id = "retro-theme";
+            document.head.append(theme)
+        }
+    })();
+    (() => { // import css
+        if (retro) {
+            const retroCss = document.createElement("link");
+            retroCss.rel = "stylesheet";
+            retroCss.href = `${online}/src/css/retro.css`;
+            retroCss.id = "retro-css";
+            document.head.append(retroCss)
+        }
+    })();
+    (() => { // set theme dark/light
+        if (theme_l == "dark") {
+            document.body.classList.add('dark');
+        } else if (document.body.classList.contains("dark")){
+            document.body.classList.remove("dark");
+        }
+    })();
+    document.querySelectorAll(".retro-capitalize").forEach(element => {
+        const element_string = String(element.innerText);
+        let out=""
+        for (let i = 0; i < element_string.length; i++) {
+            const element_letter = element_string.charAt(i);
+            if ("ABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(element_letter)) {
+                out += `<u>${element_letter}</u>`;
+            } else { 
+                out += element_letter;
+            }
+        }
+        element.innerHTML = out;
     });
-  }
-  
-  // Run on load and window resize
-  window.addEventListener("resize", resizeText);
-  resizeText();
-  
+}
+retro_load();

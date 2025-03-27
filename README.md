@@ -4,7 +4,7 @@
 ## Quickstart
 To install retro.js simply place this inside your html pages head element.
 ```html
-<script src="https://9jh1.github.io/retro.js/retro.js"></script>
+<script src="https://9jh1.github.io/retro.js/retro.js" defer></script>
 ```
 ## Install Locally 
 ```bash
